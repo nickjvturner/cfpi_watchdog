@@ -1,0 +1,16 @@
+[Unit]
+Description=diy Watchdog service for resetting wi-fi and rebooting CatFlapPi
+After=network.target
+
+[Service]
+Type=idle
+SyslogIdentifier=cfpi_watchdog
+ExecStart=/usr/bin/python3 /home/pi/cat_flap_pi/cfpi_watchdog.py
+Restart=on-failure
+RestartSec=20
+StandardOutput=null
+StandardError=journal
+#Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
