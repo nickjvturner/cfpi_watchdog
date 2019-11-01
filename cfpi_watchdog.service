@@ -10,7 +10,6 @@ Restart=on-failure
 RestartSec=20
 StandardOutput=null
 StandardError=journal
-#Environment=PYTHONUNBUFFERED=1
 
 [Install]
 WantedBy=multi-user.target
